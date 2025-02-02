@@ -13,13 +13,13 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Share Your Gallery",
-  description: "Share your pictures or videos gallery here, for free",
+  title: "Your Free Artiverse",
+  description: "Share your creations in a universe of free art",
 }
 
 export default function RootLayout({children, }: Readonly<{children: React.ReactNode}>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} >
         {children}
       </body>
