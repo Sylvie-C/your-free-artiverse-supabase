@@ -1,24 +1,21 @@
-'use client';
+'use client'
 
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import Button from './Button'
+import { usePathname , useRouter } from 'next/navigation'
+import { useTranslations } from 'next-intl'
+
 
 export default function LangBtn() {
+  const t = useTranslations("HomePage")
   const pathname = usePathname()
+  const router = useRouter()
+
+  const toggleLanguage = () => {
+    const newLocale = pathname.startsWith('/en') ? 'fr' : 'en'
+    const newPath = pathname.replace(/^\/(en|fr)/, `/${newLocale}`)
+    router.push(newPath)
+  }
 
   return (
-    <div className="flex gap-2">
-      <Link href={pathname} locale="en">
-        <Button variant={pathname.startsWith('/en') ? 'default' : 'outline'}>
-          English
-        </Button>
-      </Link>
-      <Link href={pathname} locale="fr">
-        <Button variant={pathname.startsWith('/fr') ? 'default' : 'outline'}>
-          Français
-        </Button>
-      </Link>
-    </div>
+    <button onClick={toggleLanguage} className="hover:shadow-btnShadowDark"> { t("toggle-lang") } </button>
   )
 }

@@ -1,6 +1,15 @@
 {
   "HomePage": { 
-		"title": "Welcome to our website!", 
-		"about": "Go to the about page"
+		"title": "Your Free Artiverse", 
+    "subtitle": "Share your creations online for free", 
+    "toggle-lang": "FR"
+
+
+  }, 
+  "AuthSection": {
+    "loginform-title": "Login Form", 
+    "signupform-title": "Signup Form", 
+    "login-link": "Have an account already ? Login", 
+    "signup-link": "No account ? Signup"
   }
 }
