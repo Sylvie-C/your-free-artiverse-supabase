@@ -4,12 +4,39 @@
     "subtitle": "Share your creations online for free", 
     "toggle-lang": "FR"
 
-
   }, 
+
   "AuthSection": {
+    "login-link": "Have an account already ? Click here to login", 
+    "signup-link": "No account ? Click here to signup", 
+    "loginBtn-ariaLabel": "Login Form Link", 
+    "signupBtn-ariaLabel": "Signup Form Link"
+  }, 
+
+  "LoginForm": {
     "loginform-title": "Login Form", 
-    "signupform-title": "Signup Form", 
-    "login-link": "Have an account already ? Login", 
-    "signup-link": "No account ? Signup"
-  }
+    "form-pwdLabel": "Password"
+  }, 
+
+	"SignupForm": {
+		"signupform-title": "Signup Form", 
+    "pwd01Label": "Your password", 
+    "pwd02Label": "Confirm your password", 
+    "pseudoLabel": "Pseudonym", 
+
+    "category": "Art Category", 
+
+    "cat-music": "Music", 
+    "cat-painting": "Painting", 
+    "cat-drawing": "Drawing", 
+    "cat-sculpture": "Sculpture", 
+    "cat-photo": "Photography", 
+    "cat-digital": "Digital Art", 
+    "cat-literature": "Literature", 
+    "cat-crafts": "Crafts", 
+    "cat-applied": "Applied Arts", 
+    "cat-perform": "Performing Arts", 
+    "cat-graphic": "Graphic Arts", 
+    "cat-miscellaneous": "Miscellaneous"
+	}
 }

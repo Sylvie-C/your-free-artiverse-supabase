@@ -2,12 +2,39 @@
   "HomePage": { 
 		"title": "Your Free Artiverse", 
 		"subtitle": "Partage tes créations en ligne gratuitement", 
-		"toggle-lang": "EN"
+		"toggle-lang": "EN"		
 	}, 
+
 	"AuthSection": {
+		"login-link": "Déjà inscrit ? Cliquer ici pour se connecter", 
+		"signup-link": "Pas de compte ? Cliquer ici pour s'inscrire", 
+		"loginBtn-ariaLabel": "Lien Formulaire de Connexion", 
+		"signupBtn-ariaLabel": "Lien Formulaire d'Inscription"
+	}, 
+
+	"LoginForm": {
 		"loginform-title": "Formulaire de Connexion", 
-    "signupform-title": "Formulaire d'Inscription", 
-		"login-link": "Déjà inscrit ? Se connecter", 
-		"signup-link": "Pas de compte ? S'inscrire"
+		"form-pwdLabel": "Mot de passe"
+	}, 
+
+	"SignupForm": {
+		"signupform-title": "Formulaire d'Inscription", 
+		"pwd01Label": "Votre mot de passe", 
+    "pwd02Label": "Confirmer le mot de passe", 
+    "pseudoLabel": "Pseudonyme", 
+		"category": "Catégorie artistique", 
+
+		"cat-music": "Musique", 
+    "cat-painting": "Peinture", 
+    "cat-drawing": "Dessin", 
+    "cat-sculpture": "Sculpture", 
+    "cat-photo": "Photographie", 
+    "cat-digital": "Arts Numériques", 
+    "cat-literature": "Littérature", 
+    "cat-crafts": "Artisanat", 
+    "cat-applied": "Arts Appliqués", 
+    "cat-perform": "Arts de la Scène", 
+    "cat-graphic": "Arts Graphiques", 
+    "cat-miscellaneous": "Divers"
 	}
 }

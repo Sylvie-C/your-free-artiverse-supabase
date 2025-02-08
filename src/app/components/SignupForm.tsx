@@ -1,14 +1,162 @@
 "use client"
+
+import { useState } from "react"
 import { useTranslations } from "next-intl"
+
+import EyeIcon from "./EyeIcon"
+import Dropdown from "./Dropdown"
 
 
 export default function SignupForm () {
 
-  const t = useTranslations("AuthSection")
+  const t = useTranslations("SignupForm")
+
+  const [ pwd01Visibility , setPwd01Visibility ] = useState (false)
+  const [ pwd02Visibility , setPwd02Visibility ] = useState (false)
+  const [ message , setMessage ] = useState (null)
+
+  const [formData, setFormData] = useState({
+      email: '',
+      pseudo: '', 
+      pwd01: '', 
+      pwd02: '', 
+      category: ''
+  })
+  
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target
+    setFormData({
+      ...formData,
+      [name]: value,
+    })
+  }
+
+  const showPassword01 = (value: boolean) => {
+    if (value) { setPwd01Visibility (true) ; }
+    else { setPwd01Visibility (false) ; }
+  }
+
+  const showPassword02 = (value: boolean) => {
+    if (value) { setPwd02Visibility (true) ; }
+    else { setPwd02Visibility (false) ; }
+  }
+
+  /* 
+  const checkPwd = (pwd01 , pwd02) => {
+    pwd01 = pwd01.trim() ; 
+    pwd02 = pwd02.trim() ; 
+
+    if (pwd01 === "" || pwd02 === "") {
+      alert("Empty password forbidden") ; 
+    }
+
+    if (pwd01 === pwd02) { return true }
+    else { return false }
+  }
+*/
+
+  const handleSubmit = async (event: React.FormEvent) => {
+
+    event.preventDefault()
+
+    let formValid = true
+
+    if (formValid) {
+      console.log('Formulaire soumis. FormData ? : ', formData)
+
+
+    }
+  }
 
   return(
-    <form>
-      <h2> { t("signupform-title") } </h2>
+    <form
+      onSubmit={ handleSubmit } 
+      className="p-4 m-4 w-[600px] flex flex-col items-center rounded-md 
+      bg-gradient-to-bl from-violet-300 from-30% via-orange-300 via-70% to-pink-200 to-100% 
+      dark:from-violet-900 dark:via-orange-700 dark:to-pink-700
+      "
+    >
+      <h2 className="my-4 text-2xl font-bold"> { t("signupform-title") } </h2>
+
+      <div className="flex flex-col gap-y-2">
+        {/* Email input */}
+        <div className="grid grid-cols-[250px_1fr_10px]">
+          <label htmlFor="email" className="col-span-1 justify-self-start">Email : </label>
+          <input
+            required
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={ handleChange }
+            className="col-span-2 rounded-md px-2 mx-2"
+          />
+        </div>
+
+        {/* Pseudo input */}
+        <div className="grid grid-cols-[250px_1fr_10px]">
+          <label htmlFor="text" className="col-span-1 justify-self-start"> 
+            { t("pseudoLabel") } 
+          </label>
+          <input
+            required
+            type="text"
+            id="pseudo"
+            name="pseudo"
+            value={formData.pseudo}
+            onChange={ handleChange }
+            className="col-span-2 rounded-md px-2 mx-2"
+          />
+        </div>
+
+        {/* Art Category select */}
+        <div className="grid grid-cols-[250px_1fr_10px]">
+          <label htmlFor="text" className="col-span-1 justify-self-start"> 
+            { t("category") } 
+          </label>
+          <Dropdown />
+        </div>
+  
+        {/* Password */}
+        <div className="grid grid-cols-[250px_1fr_10px]">
+          <label htmlFor="password" className="col-span-1 justify-self-start ">
+            { t("pwd01Label") } : 
+          </label>
+          <div className="flex">
+            <input
+              required
+              type= { pwd01Visibility ? "text" : "password" }
+              id="pwd01"
+              name="pwd01"
+              value={formData.pwd01}
+              onChange={ handleChange }
+              className="rounded-md px-2 mx-2"
+            />
+            <EyeIcon eyeClicked={ showPassword01 }/>
+          </div>
+        </div>
+  
+        {/* Password Confirm */}
+        <div className="grid grid-cols-[250px_1fr_10px]">
+          <label htmlFor="password" className="col-span-1 justify-self-start ">
+            { t("pwd02Label") } : 
+          </label>
+          <div className="flex">
+            <input
+              required
+              type= { pwd02Visibility ? "text" : "password" }
+              id="pwd02"
+              name="pwd02"
+              value={formData.pwd02}
+              onChange={ handleChange }
+              className="rounded-md px-2 mx-2"
+            />
+            <EyeIcon eyeClicked={ showPassword02 }/>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" className="w-fit">OK</button>
     </form>
   )
 }

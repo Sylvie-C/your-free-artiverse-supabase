@@ -1,8 +1,9 @@
 "use client" 
 
 import { useTranslations } from "next-intl"
-import { useState } from "react"
+import { useState , MouseEvent } from "react"
 
+import Banner from "./Banner"
 import LoginForm from "./LoginForm"
 import SignupForm from "./SignupForm"
 
@@ -11,12 +12,62 @@ export default function AuthSection () {
 
   const t = useTranslations ("AuthSection")
   const [ loginForm , setLoginForm ] = useState <boolean | null> (null)
+  const [ showArrow , setShowArrow ] = useState <boolean> (false)
+
+  const formLink = (event: MouseEvent<HTMLElement>) => {
+
+    const target = event.target as HTMLElement | null
+
+    if (target) {
+      const link = target.id
+
+      if (link === "login-form") { setLoginForm(true) } 
+      else if (link === "signup-form") { setLoginForm(false) }
+    }
+
+    setShowArrow (true)
+  }
 
   return (
-    <div>
-      <button onClick={ () => { setLoginForm (true) } }> { t ("login-link") } </button>
-      <button onClick={ () => { setLoginForm (false) } }> { t ("signup-link") } </button>
-      { (loginForm !== null) && <div> { loginForm ? <LoginForm /> : <SignupForm />  } </div> }
+    <div className="flex flex-col">
+      <Banner />
+
+      <div className="m-1 md:m-6 flex justify-center">
+        <p 
+          id="login-form"
+          onClick={ (e) => formLink(e) } 
+          className="text-violet-900 dark:text-violet-500 hover:text-orange-500 hover:cursor-pointer underline text-xs sm:text-lg lg:text-lg mx-4"
+          role="button"
+          tabIndex={0}
+          aria-label= { t("loginBtn-ariaLabel") }
+        >
+          { t ("login-link") } 
+        </p>
+        <p 
+          id="signup-form"
+          onClick={ (e) => formLink(e) } 
+          className="text-pink-700 hover:text-orange-500 hover:cursor-pointer underline text-xs sm:text-lg lg:text-lg mx-4"
+          role="button"
+          tabIndex={0}
+          aria-label= { t("signupBtn-ariaLabel") }
+        >
+          { t ("signup-link") }
+        </p>
+      </div>
+
+      { showArrow && 
+        <div className="flex justify-center">
+          <p className="animate-bounce text-center text-4xl sm:text-6xl w-10 sm:w-14">
+            &#8595;
+          </p>
+        </div>
+      }
+
+      { (loginForm !== null) && 
+        <section className="flex justify-center text-center">
+          { loginForm ? <LoginForm /> : <SignupForm />  } 
+        </section> 
+      }
     </div>
   )
 }
