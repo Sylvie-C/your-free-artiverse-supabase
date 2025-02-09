@@ -21,7 +21,10 @@
 		"signupform-title": "Formulaire d'Inscription", 
 		"pwd01Label": "Votre mot de passe", 
     "pwd02Label": "Confirmer le mot de passe", 
-    "pseudoLabel": "Pseudonyme", 
+    "pseudoLabel": "Pseudonyme"
+	}, 
+
+	"Upload": {
 		"category": "Catégorie artistique", 
 
 		"cat-music": "Musique", 

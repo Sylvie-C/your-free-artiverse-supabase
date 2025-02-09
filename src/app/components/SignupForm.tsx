@@ -4,7 +4,6 @@ import { useState } from "react"
 import { useTranslations } from "next-intl"
 
 import EyeIcon from "./EyeIcon"
-import Dropdown from "./Dropdown"
 
 
 export default function SignupForm () {
@@ -20,7 +19,6 @@ export default function SignupForm () {
       pseudo: '', 
       pwd01: '', 
       pwd02: '', 
-      category: ''
   })
   
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -96,7 +94,7 @@ export default function SignupForm () {
         {/* Pseudo input */}
         <div className="grid grid-cols-[250px_1fr_10px]">
           <label htmlFor="text" className="col-span-1 justify-self-start"> 
-            { t("pseudoLabel") } 
+            { t("pseudoLabel") } : 
           </label>
           <input
             required
@@ -107,14 +105,6 @@ export default function SignupForm () {
             onChange={ handleChange }
             className="col-span-2 rounded-md px-2 mx-2"
           />
-        </div>
-
-        {/* Art Category select */}
-        <div className="grid grid-cols-[250px_1fr_10px]">
-          <label htmlFor="text" className="col-span-1 justify-self-start"> 
-            { t("category") } 
-          </label>
-          <Dropdown />
         </div>
   
         {/* Password */}

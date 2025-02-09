@@ -22,8 +22,9 @@
 		"signupform-title": "Signup Form", 
     "pwd01Label": "Your password", 
     "pwd02Label": "Confirm your password", 
-    "pseudoLabel": "Pseudonym", 
-
+    "pseudoLabel": "Pseudonym"
+	}, 
+  "Upload": {
     "category": "Art Category", 
 
     "cat-music": "Music", 
@@ -38,5 +39,5 @@
     "cat-perform": "Performing Arts", 
     "cat-graphic": "Graphic Arts", 
     "cat-miscellaneous": "Miscellaneous"
-	}
+  }
 }
