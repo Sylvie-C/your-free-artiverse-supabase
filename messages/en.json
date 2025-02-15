@@ -1,9 +1,7 @@
 {
   "HomePage": { 
-		"title": "Your Free Artiverse", 
     "subtitle": "Share your creations online for free", 
-    "toggle-lang": "FR"
-
+    "toggle-lang": "FR"    
   }, 
 
   "AuthSection": {
@@ -22,8 +20,14 @@
 		"signupform-title": "Signup Form", 
     "pwd01Label": "Your password", 
     "pwd02Label": "Confirm your password", 
-    "pseudoLabel": "Pseudonym"
+    "pseudoLabel": "Pseudonym", 
+    "alertEmptyPassword": "Required field", 
+    "alertComparePasswords": "Passwords not identical", 
+    "signupSuccess": "User signed up successfully", 
+    "signupError": "Error during signup", 
+    "password-instructions": "Password must contain at least : 6 characters, 1 Uppercase, 1 Special character, 1 number."
 	}, 
+  
   "Upload": {
     "category": "Art Category", 
 

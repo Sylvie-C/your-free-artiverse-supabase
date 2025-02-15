@@ -1,6 +1,5 @@
 {
   "HomePage": { 
-		"title": "Your Free Artiverse", 
 		"subtitle": "Partage tes créations en ligne gratuitement", 
 		"toggle-lang": "EN"		
 	}, 
@@ -21,7 +20,12 @@
 		"signupform-title": "Formulaire d'Inscription", 
 		"pwd01Label": "Votre mot de passe", 
     "pwd02Label": "Confirmer le mot de passe", 
-    "pseudoLabel": "Pseudonyme"
+    "pseudoLabel": "Pseudonyme", 
+		"alertEmptyPassword": "Champ obligatoire",
+		"alertComparePasswords": "Mots de passe non identiques", 
+		"signupSuccess": "Inscription réussie", 
+		"signupError": "Erreur lors de l'inscription", 
+		"password-instructions": "Le mot de passe doit comporter au minimum : 6 caractères, 1 majuscule, 1 caractère spécial, et 1 chiffre."
 	}, 
 
 	"Upload": {
