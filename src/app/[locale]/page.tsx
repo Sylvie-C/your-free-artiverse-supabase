@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl'
 
 import Header from '../components/Header'
+import Banner from '../components/Banner'
 import AuthSection from '../components/AuthSection'
 
 
@@ -24,6 +25,7 @@ export default function HomePage() {
           </p>
         </div>
       </div>
+      <Banner />
       <AuthSection />
     </>
   )

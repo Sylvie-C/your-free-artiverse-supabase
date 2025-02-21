@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js] fullstack project bootstrapped with [`create-next-app`]. 
+
+This application allows artists of all kinds to share their works online. 
+Each artist has their own account and everything is free! The works are therefore downloadable.
+This site offers translations in English and French.
 
 ## Getting Started
 
@@ -13,21 +17,16 @@ pnpm dev
 # or
 bun dev
 ```
-
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Stack
 
-## Learn More
+NextJS, TypeScript, TailwindCSS, Supabase, react-hook-form, next-intl, zod. 
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Use of SupabaseAuth for subscription, login, update(upload files) features, with "zod" as database schema validator. 
+Use of next-intl for translations feature. 
+Use of react-hook-form for client side subscription and login forms. 
 
 ## Deploy on Vercel
 

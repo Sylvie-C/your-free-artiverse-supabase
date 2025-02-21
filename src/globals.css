@@ -12,6 +12,10 @@ button {
   @apply m-2 border-2 rounded-lg py-1 px-2 text-base transition-all duration-300 ease-in-out;
 }
 
+.formIconBtn {
+  @apply w-6 h-6 flex justify-center items-center rounded-full border-solid border-2 cursor-pointer ; 
+}
+
 @media (prefers-color-scheme: dark) {
   :root {}
 
@@ -20,6 +24,13 @@ button {
   }
   button:hover {
     @apply shadow-btnShadowLight text-btnDark border-btnDark bg-btnLight;
+  }
+
+  .formIconBtn {
+    @apply text-formIconBtn_dark border-formIconBtn_dark; 
+  }
+  .formIconBtn:hover {
+    @apply text-formIconBtn_light border-formIconBtn_light; 
   }
 }
 
@@ -30,5 +41,12 @@ button {
   }
   button:hover {
     @apply shadow-btnShadowDark text-btnLight border-btnLight bg-btnDark;
+  }
+
+  .formIconBtn {
+    @apply text-formIconBtn_dark border-formIconBtn_dark; 
+  }
+  .formIconBtn:hover {
+    @apply text-formIconBtn_light border-formIconBtn_light; 
   }
 }

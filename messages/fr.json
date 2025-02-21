@@ -18,19 +18,34 @@
 
 	"SignupForm": {
 		"signupform-title": "Formulaire d'Inscription", 
+
 		"pwd01Label": "Votre mot de passe", 
     "pwd02Label": "Confirmer le mot de passe", 
     "pseudoLabel": "Pseudonyme", 
-		"alertEmptyPassword": "Champ obligatoire",
-		"alertComparePasswords": "Mots de passe non identiques", 
+
+		"emailError": "Email non valide", 
+    "emailMin": "L'email doit contenir 6 caractères minimum",
+    "emailMax": "L'email doit faire moins de 100 caractères",
+		"emailExists" : "Un compte existe déjà avec cet email.", 
+
+    "pseudoError": "Pseudo invalide", 
+    "pseudoMax": "Le Pseudo doit contenir moins de 100 caractères",
+
+		"passwordMin": "Le mot de passe doit contenir 6 caractères minimum", 
+		"passwordMax": "Le mot de passe doit faire moins de 100 caractères", 
+		"passwordConfirm": "Confirmer le mot de passe", 
+    "passwordError": "Mot de passe non valide (cliquer sur '?')", 
+		"passwordMatch": "Les mots de passe sont différents", 
+		"password-instructions": "Le mot de passe doit comporter au minimum : 6 caractères, 1 majuscule, 1 caractère spécial, et 1 chiffre.", 
+
 		"signupSuccess": "Inscription réussie", 
-		"signupError": "Erreur lors de l'inscription", 
-		"password-instructions": "Le mot de passe doit comporter au minimum : 6 caractères, 1 majuscule, 1 caractère spécial, et 1 chiffre."
+		"signupError": "Oups ! Un problème est survenu côté serveur. Essayez à nouveau dans quelques instants."
 	}, 
 
 	"Upload": {
 		"category": "Catégorie artistique", 
 
+		"cat-website": "Site Web", 
 		"cat-music": "Musique", 
     "cat-painting": "Peinture", 
     "cat-drawing": "Dessin", 

@@ -18,19 +18,34 @@
 
 	"SignupForm": {
 		"signupform-title": "Signup Form", 
+
     "pwd01Label": "Your password", 
     "pwd02Label": "Confirm your password", 
     "pseudoLabel": "Pseudonym", 
-    "alertEmptyPassword": "Required field", 
-    "alertComparePasswords": "Passwords not identical", 
-    "signupSuccess": "User signed up successfully", 
-    "signupError": "Error during signup", 
-    "password-instructions": "Password must contain at least : 6 characters, 1 Uppercase, 1 Special character, 1 number."
+
+    "emailError": "Invalid email", 
+    "emailMin": "Email must be at least 6 characters long",
+    "emailMax": "Email must be less than 100 characters",
+    "emailExists" : "An account already exists with this email address. ", 
+    
+    "pseudoError": "Invalid pseudo", 
+    "pseudoMax": "Pseudo must be less than 100 characters",
+
+		"passwordMin": "Password must be at least 6 characters long", 
+		"passwordMax": "Password must be less than 100 characters long", 
+		"passwordConfirm": "Please confirm your password", 
+    "passwordError": "Invalid Password (click '?')", 
+    "passwordMatch": "Passwords are different", 
+    "password-instructions": "Password must contain at least : 6 characters, 1 Uppercase, 1 Special character, 1 number.", 
+
+    "signupSuccess": "Signed up successfully", 
+    "signupError": "Oops! Something went wrong on the server side. Please try again later."
 	}, 
   
   "Upload": {
     "category": "Art Category", 
 
+    "cat-website": "Website", 
     "cat-music": "Music", 
     "cat-painting": "Painting", 
     "cat-drawing": "Drawing", 

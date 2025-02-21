@@ -17,13 +17,19 @@ export default {
         btnDark: "#251c31", 
         btnLight: "#ffcbba", 
 
+        modalDark: "#251c31", 
+        modalLight: "#ffcbba", 
+
         inputLight: "#ffcbba", 
         inputDark: "#0c0317", 
 
         inputBorder: {
           light: "#f472b6", 
           dark: "#be185d", 
-        }
+        }, 
+
+        formIconBtn_light: "#a3fdff", 
+        formIconBtn_dark: "#4e8485", 
       },
       boxShadow: {
         btnShadowLight: "0 0 10px #ffcbba",     // saumon

@@ -8,6 +8,7 @@ export default function Dropdown () {
   return (
     <select name="category" id="category" className="col-span-2 rounded-md px-2 mx-2">
       <option value=""></option>
+      <option value="music">{t("cat-website")}</option>
       <option value="music">{t("cat-music")}</option>
       <option value="painting">{t("cat-painting")}</option>
       <option value="drawing">{t("cat-drawing")}</option>

@@ -3,7 +3,6 @@
 import { useTranslations } from "next-intl"
 import { useState , MouseEvent } from "react"
 
-import Banner from "./Banner"
 import LoginForm from "./LoginForm"
 import SignupForm from "./SignupForm"
 
@@ -30,9 +29,9 @@ export default function AuthSection () {
 
   return (
     <div className="flex flex-col">
-      <Banner />
 
       <div className="m-1 md:m-6 flex justify-center">
+        {/* Login link */}
         <p 
           id="login-form"
           onClick={ (e) => formLink(e) } 
@@ -43,6 +42,8 @@ export default function AuthSection () {
         >
           { t ("login-link") } 
         </p>
+
+        {/* Signup link */}
         <p 
           id="signup-form"
           onClick={ (e) => formLink(e) } 
