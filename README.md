@@ -1,4 +1,4 @@
-# Your Free Artiverse
+# Your Free Artiverse with Supabase
 
 ## À propos / About
 
@@ -7,9 +7,11 @@
 Ce projet est destiné à alimenter mon portfolio de développeuse web. 
 Il n'est pas déployé ni finalisé suite à une information de Supabase indiquant que l'utilisation de la base de données est suspendue après une trop longue période d'inactivité. 
 Aussi, vous trouverez ici uniquement l'implémentation des fonctionnalités d'authentification avec SupabaseAuth pour une inscription et connexion utilisateur.
+Voir aussi le repository finalisé du projet avec NextJS. 
 
 This project is intended to feed my web developer portfolio. It has not been deployed or finalized due to information from Supabase indicating that the use of the database is suspended after a long period of inactivity.
 Thus, you will only find here the implementation of authentication features with SupabaseAuth for user registration and login.
+You can also check the finalized repository of the project with NextJS.
 
 ### À propos de l'application / About this application
 
