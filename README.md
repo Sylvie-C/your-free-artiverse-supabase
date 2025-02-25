@@ -37,12 +37,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 NextJS v15.1.3, React 19, TypeScript v5, TailwindCSS, Supabase, react-hook-form, next-intl, zod. 
 
-``
-Use of SupabaseAuth for subscription and login features, 
-Use of zod for database TS types + schema validation, 
-Use of next-intl for translations, 
-Use of react-hook-form for client side subscription and login forms.
-``
+
+Use of SupabaseAuth for subscription and login features,  
+Use of zod for database TS types + schema validation,  
+Use of next-intl for translations,  
+Use of react-hook-form for client side subscription and login forms.  
+
 
 ## Deploy on Vercel
 
