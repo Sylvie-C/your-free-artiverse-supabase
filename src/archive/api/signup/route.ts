@@ -16,12 +16,13 @@ const FormSchema = z.object({
     .min(6, "Server Error: password < 6 chars")
     .max(100, "Server Error: password > 100 chars")
     .regex(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/, 
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&\>\<€§#])[A-Za-z\d@$!%*?&><€§#]{6,}$/, 
       { message: "Server Error : invalid password format", }
     )
     .transform((val) => val.trim()),
 })
 
+// Zod server error codes
 const ZodErrorCodes = {
   INVALID_EMAIL: 1001,
   INVALID_PASSWORD: 1002,

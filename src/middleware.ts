@@ -1,7 +1,7 @@
-/* Internationalization feature */
-
 import createMiddleware from 'next-intl/middleware'
 import {routing} from './i18n/routing'
+
+// Internationalization feature
  
 export default createMiddleware(routing)
  

@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
 
+import { signup } from "../actions/authActions"
+
 import EyeIcon from "./EyeIcon"
 import Modal from "./Modal"
 
@@ -23,7 +25,7 @@ const getFormSchema = (t: (key: string) => string) => (
       .min(6, t("passwordMin"))
       .max(100, t("passwordMax"))
       .regex(
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/, 
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&\>\<€§#])[A-Za-z\d@$!%*?&><€§#]{6,}$/,
         { message: t("passwordError"), }
       )
       .transform((val) => val.trim())
@@ -32,7 +34,7 @@ const getFormSchema = (t: (key: string) => string) => (
       .min(6, t("passwordConfirm"))
       .max(100, t("passwordMax"))
       .regex(
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/, 
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&\>\<€§#])[A-Za-z\d@$!%*?&><€§#]{6,}$/,
         { message: t("passwordError"), }
       )
       .transform((val) => val.trim())
@@ -49,7 +51,7 @@ const getFormSchema = (t: (key: string) => string) => (
 // TypeScript form schema
 interface SignupFormData {
   email: string;
-  pseudo: string | null;
+  pseudo?: string | null;
   pwd01: string;
   pwd02: string;
 }
@@ -70,6 +72,7 @@ export default function SignupForm () {
   const [ modalContent , setModalContent ] = useState <React.ReactNode | null> (null)
   const [ registered , setRegistered ] = useState(false)
 
+  // Form handling with useForm()
   const { 
     register, 
     handleSubmit, 
@@ -94,20 +97,16 @@ export default function SignupForm () {
   const onSubmit = async (data : SignupFormData ) => {
 
     try {
+      setLoading(true)
+
       const newUser = {
         email: data.email,
         password: data.pwd02,
         pseudo: data.pseudo,
       }
 
-      // Signup with SupabaseAuth
-      const response = await fetch('/api/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify( newUser ),
-      })
+      // Signup with SupabaseAuth (server action)
+      const response = await signup(newUser)
   
       const result = await response.json()
 
@@ -161,6 +160,7 @@ export default function SignupForm () {
     }
   }
 
+  // modal message for server error 5xx type
   useEffect (
     () => {
       setModalContent (
@@ -185,46 +185,45 @@ export default function SignupForm () {
       <Modal jsxContent= { modalContent } show={ modalError ? true : false } />
       <form
         onSubmit={ handleSubmit(onSubmit) } 
-        className="p-4 m-4 w-[600px] flex flex-col items-center rounded-md 
+        className="p-4 m-4 w-72 sm:w-[600px] flex flex-col items-center rounded-md 
         bg-gradient-to-bl from-violet-300 from-30% via-orange-300 via-70% to-pink-200 to-100% 
-        dark:from-violet-900 dark:via-orange-700 dark:to-pink-700
-        "
+        dark:from-violet-900 dark:via-orange-700 dark:to-pink-700"
       >
         <h2 className="my-4 text-2xl font-bold"> { t("signupform-title") } </h2>
   
-        <div className="flex flex-col gap-y-2">
+        <div className="w-full flex flex-col gap-y-2">
           {/* Email input */}
-          <div className="grid grid-cols-[250px_1fr_10px]">
-            <label className="col-span-1 justify-self-start">Email : </label>
+          <div className="grid grid-cols-[minmax(0, max-content)] sm:grid-cols-[250px_1fr_10px]">
+            <label className="sm:col-span-1 justify-self-start">Email : </label>
             <input
               required
               type="email"
-              className="col-span-2 rounded-md px-2 mx-2"
+              className="sm:col-span-2 rounded-md px-2 mx-2"
               {...register("email")}
             />
           </div>
           {rhf_errors.email && <p className="text-red-500 bg-white dark:bg-black">{rhf_errors.email.message}</p>}
   
           {/* Pseudo input */}
-          <div className="grid grid-cols-[250px_1fr_10px]">
-            <label htmlFor="text" className="col-span-1 justify-self-start"> 
+          <div className="grid grid-cols-[minmax(0, max-content)] sm:grid-cols-[250px_1fr_10px]">
+            <label className="sm:col-span-1 justify-self-start"> 
               { t("pseudoLabel") } : 
             </label>
             <input
               type="text"
-              className="col-span-2 rounded-md px-2 mx-2"
+              className="sm:col-span-2 rounded-md px-2 mx-2"
               {...register("pseudo")}
             />
           </div>
           {rhf_errors.pseudo && <p className="text-red-500 bg-white dark:bg-black">{rhf_errors.pseudo.message}</p>}
     
           {/* Password */}
-          <div className="grid grid-cols-[250px_1fr_10px]">
-            <label htmlFor="password" className="col-span-1 justify-self-start ">
+          <div className="grid grid-cols-[minmax(0, max-content)] sm:grid-cols-[250px_1fr_10px]">
+            <label className="col-span-1 justify-self-start ">
               { t("pwd01Label") } : 
             </label>
   
-            <div className="flex">
+            <div className="flex flex-col sm:flex-row">
               <div className="relative">
                 <input
                   required
@@ -245,7 +244,7 @@ export default function SignupForm () {
   
               </div>
   
-              <div className="flex">
+              <div className="flex mt-2 sm:mt-0">
                 <EyeIcon eyeClicked={ showPassword01 }/>
                 <span 
                   className="formIconBtn role='button'"
@@ -260,12 +259,12 @@ export default function SignupForm () {
           {rhf_errors.pwd01 && <p className="text-red-500 bg-white dark:bg-black">{rhf_errors.pwd01.message}</p>}
     
           {/* Password Confirm */}
-          <div className="grid grid-cols-[250px_1fr_10px]">
-            <label htmlFor="password" className="col-span-1 justify-self-start ">
+          <div className="grid grid-cols-[minmax(0, max-content)] sm:grid-cols-[250px_1fr_10px]">
+            <label className="col-span-1 justify-self-start ">
               { t("pwd02Label") } : 
             </label>
   
-            <div className="flex">
+            <div className="flex flex-col sm:flex-row">
               <input
                 required
                 type= { pwd02Visibility ? "text" : "password" }
@@ -277,7 +276,7 @@ export default function SignupForm () {
                 }
               />
   
-              <div className="flex">
+              <div className="flex mt-2 sm:mt-0">
                 <EyeIcon eyeClicked={ showPassword02 }/>
                 <span 
                   className="formIconBtn role='button'"
@@ -293,10 +292,10 @@ export default function SignupForm () {
         </div>
   
         { error && <p className="p-2 m-2 text-red-500 bg-black">{error}</p> }
-        { registered && <p className="p-1 m-1 text-emerald-950 bg-emerald-200"> { t("signupSuccess") } </p> }
+        { registered ? <p className="p-1 m-1 text-emerald-950 bg-emerald-200"> { t("signupSuccess") } </p> : null }
 
         <button type="submit" className="w-fit" disabled={loading}>
-          {loading ? "Signing up..." : "OK"}
+          {loading ? "Loading..." : "OK"}
         </button>
       </form>
     </>

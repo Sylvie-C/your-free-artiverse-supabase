@@ -11,11 +11,6 @@
 		"signupBtn-ariaLabel": "Lien Formulaire d'Inscription"
 	}, 
 
-	"LoginForm": {
-		"loginform-title": "Formulaire de Connexion", 
-		"form-pwdLabel": "Mot de passe"
-	}, 
-
 	"SignupForm": {
 		"signupform-title": "Formulaire d'Inscription", 
 
@@ -40,6 +35,21 @@
 
 		"signupSuccess": "Inscription réussie", 
 		"signupError": "Oups ! Un problème est survenu côté serveur. Essayez à nouveau dans quelques instants."
+	}, 
+
+	"LoginForm": {
+		"loginForm-title": "Formulaire de Connexion", 
+		"form-pwdLabel": "Mot de passe", 
+
+		"emailMax": "L'email doit faire moins de 100 caractères",
+		"emailError": "Email non valide", 
+		"passwordMax": "Le mot de passe doit faire moins de 100 caractères", 
+
+		"loginCredentials": "Email ou Mot de passe incorrect", 
+		"loginSuccess": "Connexion réussie. ", 
+		"loginUnknownError": "Erreur inconnue : Veuillez réessayer", 
+		"loginServerError": "Erreur Serveur : Veuillez vérifier votre connexion internet et réessayer", 
+    "loginError": "Oups ! Un problème est survenu. Essayez à nouveau dans quelques instants."
 	}, 
 
 	"Upload": {

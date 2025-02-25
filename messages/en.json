@@ -11,11 +11,6 @@
     "signupBtn-ariaLabel": "Signup Form Link"
   }, 
 
-  "LoginForm": {
-    "loginform-title": "Login Form", 
-    "form-pwdLabel": "Password"
-  }, 
-
 	"SignupForm": {
 		"signupform-title": "Signup Form", 
 
@@ -41,6 +36,21 @@
     "signupSuccess": "Signed up successfully", 
     "signupError": "Oops! Something went wrong on the server side. Please try again later."
 	}, 
+
+  "LoginForm": {
+    "loginForm-title": "Login Form", 
+    "form-pwdLabel": "Password", 
+
+    "emailMax": "Email must be less than 100 characters",
+    "emailError": "Invalid email", 
+    "passwordMax": "Password must be less than 100 characters long", 
+
+    "loginCredentials": "Invalid email or password", 
+    "loginSuccess": "Authenticated successfully", 
+    "loginUnknownError": "Unknown error occured : please try again", 
+    "loginServerError": "Server error : Please check your Internet connection and try again", 
+    "loginError": "Oops! Something went wrong. Please try again later"
+  }, 
   
   "Upload": {
     "category": "Art Category", 

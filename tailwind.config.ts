@@ -39,13 +39,13 @@ export default {
         mainTitle: "1rem", 
       }, 
       animation: { 
-        wavy: "wavyAnim 5s infinite ease-in-out"
+        wavy: "wavyAnim 10s infinite ease-in-out"
       }, 
       keyframes: { 
         wavyAnim: {
           '0%': { transform: "translateY(0px)" },
-          '20%': { transform: "translateY(-30px)" }, 
-          '40% , 100%': { transform: "translateY(0px)" }
+          '20%': { transform: "translateY(-40px)" }, 
+          '40% , 80%': { transform: "translateY(0px)" }
         }, 
       }, 
     },

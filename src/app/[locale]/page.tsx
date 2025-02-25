@@ -3,8 +3,6 @@ import { useTranslations } from 'next-intl'
 import Header from '../components/Header'
 import Banner from '../components/Banner'
 import AuthSection from '../components/AuthSection'
-
-
 import MainTitle from '../components/MainTitle'
 
  

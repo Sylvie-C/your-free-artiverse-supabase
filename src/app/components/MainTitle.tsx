@@ -1,5 +1,5 @@
 
-export default function MyComponent({ word01, word02 , word03 }
+export default function MainTitle({ word01, word02 , word03 }
   : { word01: string; word02: string; word03: string }) {
 
   const words = [
@@ -30,7 +30,7 @@ export default function MyComponent({ word01, word02 , word03 }
   )
 
   return (
-    <h1 className="text-3xl sm:text-5xl sm:tracking-wider lg:text-6xl lg:tracking-mainTitle">
+    <h1 className="mt-10 text-3xl sm:text-5xl sm:tracking-wider lg:text-6xl lg:tracking-mainTitle">
       {titleJSXArray}
     </h1>
   )
