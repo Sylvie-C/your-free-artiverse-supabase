@@ -1,4 +1,8 @@
-## À propos du projet / About this project
+# Your Free Artiverse
+
+## À propos / About
+
+### À propos du projet / About this project
 
 Ce projet est destiné à alimenter mon portfolio de développeuse web. 
 Il n'est pas déployé ni finalisé suite à une information de Supabase indiquant que l'utilisation de la base de données est suspendue après une trop longue période d'inactivité. 
@@ -7,7 +11,7 @@ Aussi, vous trouverez ici uniquement l'implémentation des fonctionnalités d'au
 This project is intended to feed my web developer portfolio. It has not been deployed or finalized due to information from Supabase indicating that the use of the database is suspended after a long period of inactivity.
 Thus, you will only find here the implementation of authentication features with SupabaseAuth for user registration and login.
 
-# À propos de l'application / About this application
+### À propos de l'application / About this application
 
 Cette application permet aux artistes de tous horizons de partager leurs œuvres en ligne. Chaque artiste possède son propre compte et tout est gratuit ! Les œuvres sont donc téléchargeables. Ce site propose des traductions en anglais et en français. 
 
